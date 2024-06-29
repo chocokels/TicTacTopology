@@ -31,4 +31,5 @@ func _on_button_mouse_exited():
 		texture = images[0]
 
 func _on_button_pressed():
-	new_move(Global.turn)
+	if state == 0:
+		new_move(Global.turn)
