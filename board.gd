@@ -18,15 +18,12 @@ var piece_scene: PackedScene = preload("element.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	board_elems = init_board_grid(cols,rows)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	Global.win.connect(_on_win)
 
 func get_piece_loc(i,j):
 	var x_width = boardsize / cols
 	var y_width = boardsize / rows
-	return Vector2(x_width * (i + 0.5), y_width * (j + 0.5))
+	return Vector2(x_width * (j + 0.5), y_width * (i + 0.5))
 
 func init_board_grid(board_height: int, board_width: int = board_height):
 	var board_elems = []
@@ -56,3 +53,7 @@ func init_board_grid(board_height: int, board_width: int = board_height):
 			if j < board_width - 1:  # Set right
 				board_elems[i][j].directions[1][1] = board_elems[i][j+1]
 	return board_elems
+
+func _on_win():
+	print("There's a winner: " + str(Global.winner))
+
