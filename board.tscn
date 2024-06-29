@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlthkwf8e5477"]
+
+[ext_resource type="Script" path="res://board.gd" id="1_bkmpn"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_bkmpn")
+
+[node name="V1" type="Line2D" parent="."]
+points = PackedVector2Array(200, 0, 200, 600)
+default_color = Color(0, 0, 0, 1)
+
+[node name="V2" type="Line2D" parent="."]
+points = PackedVector2Array(400, 0, 400, 600)
+default_color = Color(0, 0, 0, 1)
+
+[node name="H1" type="Line2D" parent="."]
+points = PackedVector2Array(0, 200, 600, 200)
+default_color = Color(0, 0, 0, 1)
+
+[node name="H2" type="Line2D" parent="."]
+points = PackedVector2Array(0, 400, 600, 400)
+default_color = Color(0, 0, 0, 1)

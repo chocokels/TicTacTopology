@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://2qnaapk4f2b1"]
+
+[ext_resource type="Script" path="res://element.gd" id="1_nl8ck"]
+[ext_resource type="PackedScene" uid="uid://blf82y3rvycnd" path="res://piece.tscn" id="2_dbu8x"]
+
+[node name="Element" type="Node2D"]
+script = ExtResource("1_nl8ck")
+
+[node name="Piece" parent="." instance=ExtResource("2_dbu8x")]
+
+[connection signal="changed" from="Piece" to="." method="_on_piece_changed"]
